@@ -23,7 +23,11 @@ export default function RootLayout({
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange>
-        <body className={cn(inter.className, "container mx-auto px-64")}>
+        <body
+          className={cn(
+            inter.className,
+            "container mx-auto px-64 overflow-x-hidden"
+          )}>
           {children}
         </body>
       </ThemeProvider>
