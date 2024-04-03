@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Links } from "@/info/links";
 import { Badge } from "./ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,6 +13,8 @@ import {
 } from "lucide-react";
 
 export default function Hero() {
+  const { github, linkedin, twitter, email } = Links;
+
   return (
     <div className="">
       <main className="px-4 py-8 container ">
@@ -33,27 +36,42 @@ export default function Hero() {
               size={30}
             />
             */}
-
             <div className="flex flex-col items-center justify-center">
-              <h1 className="text-6xl font-bold my-12">
-                Hey! I&apos;m
-                <span className="text-primary ml-2">Elham</span>
+              <h1 className="text-6xl font-bold my-16">
+                Hey, I&apos;m
+                <span className="text-primary"> Elham! </span>
                 <span className=" animate-bounce inline-block">👋</span>
               </h1>
-              <h3 className="text-3xl font-semibold mb-4 inline"></h3>
             </div>
-
             <p className="mb-4">
-              Passionate and creative Software Engineer in Toronto{" "}
+              I&apos;m a Software Engineer who is constantly Building and always
+              Learning! Currently a computer science student at the University
+              of Toronto
               <span aria-label="flag" role="Image" className="ml-1.5">
                 🇨🇦
-              </span>
+              </span>{" "}
+              graduating May 2025.
             </p>
             <p className="mb-4">
-              Detail-driven, I strive to build great-looking, user-friendly
-              software while enhancing my skills along the way
+              {/* <span aria-label="flag" role="Image" className="ml-1.5">
+                🇨🇦
+              </span> */}
             </p>
-            <Link href={"#"}>
+            <p className="mb-4">
+              I have a passion for diving into a variety of projects, whether
+              it&apos;s crafting robust backend systems, delving into the
+              intricacies of low-level programming, developing efficient
+              internal tools, or creating full-stack applications.
+            </p>
+            <p className="mb-4">
+              Currently on the lookout for exciting Fall 2024 internship
+              opportunities, May 2025 full-time roles, or even that next big
+              startup idea :)
+            </p>
+            <p className="mb-4">
+              Let&apos;s connect and create something awesome together!
+            </p>
+            <Link href={"/about"}>
               <Button
                 className="bg-primary text-primary-foreground"
                 size={"lg"}>
@@ -61,22 +79,22 @@ export default function Hero() {
               </Button>
             </Link>
             <div className="flex space-x-4 mt-4">
-              <Link href={"#"}>
+              <Link href={github}>
                 <Badge className=" shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">
                   <GithubIcon />
                 </Badge>
               </Link>
-              <Link href={"#"}>
+              <Link href={linkedin}>
                 <Badge className="shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">
                   <LinkedinIcon />
                 </Badge>
               </Link>
-              <Link href={"#"}>
+              <Link href={twitter}>
                 <Badge className="shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">
                   <TwitterIcon />
                 </Badge>
               </Link>
-              <Link href={"#"}>
+              <Link href={email}>
                 <Badge className="shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">
                   <MailIcon />
                 </Badge>

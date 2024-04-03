@@ -8,10 +8,10 @@ export default function HeroBlog() {
       <main className="px-4 py-8  container ">
         <section>
           <div className="flex items-center justify-between mb-4">
-            <h4 className="text-xl font-semibold">From the blog</h4>
+            <h4 className="text-2xl font-semibold">From the blog</h4>
             <div className="flex items-center space-x-2">
               {/* <RssIcon className="text-orange-500 h-6 w-6" /> */}
-              <Button className=" bg-primary text-white">RSS Feed</Button>
+              {/* <Button className=" bg-primary text-white">RSS Feed</Button> */}
               <Button className="bg-primary text-white">View all</Button>
             </div>
           </div>
