@@ -8,7 +8,7 @@ type Props = {};
 const Logo = (props: Props) => {
   return (
     <Link href={"/"}>
-      <div className="flex flex-row justify-center hover:underline">
+      <div className="flex flex-row justify-center ">
         <ChevronRight
           className="my-auto animate-pulse-new relative left-2"
           size={30}

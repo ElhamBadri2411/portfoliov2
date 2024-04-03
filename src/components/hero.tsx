@@ -71,13 +71,15 @@ export default function Hero() {
             <p className="mb-4">
               Let&apos;s connect and create something awesome together!
             </p>
-            <Link href={"/about"}>
-              <Button
-                className="bg-primary text-primary-foreground"
-                size={"lg"}>
-                More about me
-              </Button>
-            </Link>
+            <div className="flex flex-row">
+              <Link href={"/about"}>
+                <Button
+                  className="bg-primary text-primary-foreground"
+                  size={"lg"}>
+                  More about me
+                </Button>
+              </Link>
+            </div>
             <div className="flex space-x-4 mt-4">
               <Link href={github}>
                 <Badge className=" shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">

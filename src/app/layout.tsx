@@ -4,6 +4,7 @@ import { Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const spacemono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"] });
@@ -32,6 +33,7 @@ export default function RootLayout({
           disableTransitionOnChange>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
