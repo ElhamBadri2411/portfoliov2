@@ -9,13 +9,13 @@ type Props = {};
 const Experience = (props: Props) => {
   return (
     <div className="">
-      <main className="px-4 py-8  container ">
+      <main className="px-4 py-8  lg:container ">
         <div className="flex items-center justify-between mb-4">
           <h4 className="text-2xl font-semibold">Experience</h4>
         </div>
         {experiences.map((experience, i) => {
           return (
-            <div className="pr-20" key={experience.company}>
+            <div className="md:pr-20" key={experience.company}>
               <div className=" z-50 flex justify-between items-center rounded-lg border border-gray-200 p-4 shadow-sm transition-colors hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-200 bg-transparent">
                 {/*  dark:bg-gray-950 dark:hover:border-gray-700"> */}
                 <Link href={experience.link} className="group">
