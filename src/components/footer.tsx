@@ -2,7 +2,6 @@ import React from "react";
 
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Links } from "@/info/links";
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "lucide-react";
@@ -12,8 +11,8 @@ const Footer = (props: Props) => {
   const { github, linkedin, email, twitter } = Links;
   return (
     <div className="container mx-auto w-full p-4 ">
-      <div className="container">
-        <footer className="border-t pt-6">
+      <div className="container px-4 py-8">
+        <footer className="border-t pt-6 mx-12">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-sm">Elham Badri</p>

@@ -48,6 +48,7 @@ type Experience = {
   to?: string;
   link: string;
   image: string;
+  hasNotes: boolean;
 };
 
 export const Links: Link = {
@@ -193,10 +194,47 @@ export const Skills: Skill[] = [
 export const Experiences: Experience[] = [
   {
     company: "Taq",
-    position: "Software Developer",
+    position: "Software Developer (Co-op)",
     from: "Sep 2023",
     to: "Apr 2024",
-    link: "taq",
-    image: "",
+    link: "https://www.taqauto.com/",
+    image: "/taqauto_logo.jpg",
+    hasNotes: true,
+  },
+  {
+    company: "University of Toronto Scarborough",
+    position: "Software Developer (Part-time)",
+    from: "Mar 2023",
+    to: "Aug 2023",
+    link: "https://www.cathcrosscultural.org/",
+    image: "/university_of_toronto_scarborough_logo.jpg",
+    hasNotes: false,
+  },
+  {
+    company: "Oracle",
+    position: "Software Developer (Co-op)",
+    from: "Sep 2022",
+    to: "Dec 2022",
+    link: "https://www.oracle.com/ca-en/",
+    image: "/oracle_logo.jpg",
+    hasNotes: true,
+  },
+  {
+    company: "KHERG",
+    position: "Software Developer (Part-time)",
+    from: "May 2022",
+    to: "Aug 2022",
+    link: "https://nefros.net/",
+    image: "/kidney_health_education_and_research_group_logo.jpg",
+    hasNotes: false,
+  },
+  {
+    company: "Sunnybrook",
+    position: "Software Developer (Co-op)",
+    from: "Jan 2022",
+    to: "May 2022",
+    link: "https://sunnybrook.ca/",
+    image: "/sunnybrook_health_sciences_centre_logo.jpg",
+    hasNotes: false,
   },
 ];
