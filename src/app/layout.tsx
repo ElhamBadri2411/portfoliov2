@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={cn(
           spacemono.className,
-          "container mx-auto px-64 overflow-x-hidden"
+          "lg:container mx-auto lg:px-40 xl:px-64"
         )}>
         <ThemeProvider
           attribute="class"

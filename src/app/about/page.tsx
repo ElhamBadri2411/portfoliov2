@@ -12,12 +12,12 @@ const AboutPage = (props: Props) => {
   const { github, linkedin, twitter, email } = Links;
 
   return (
-    <main className="container relative mx-auto w-full overflow-auto p-4 print:p-12 md:p-16">
+    <main className="lg:container mx-auto w-full overflow-auto p-4 lg:p-16">
       <div className="px-4 py-8 ">
         <h1 className="pt-10 text-3xl">about me</h1>
         {/* <div className=" w-28 bg-primary h-0.5 rounded-full" /> */}
-        <div className="pt-5 flex flex-row justify-between">
-          <div className=" max-w-82 max-w-96">
+        <div className="pt-5 flex flex-col-reverse lg:flex-row justify-between">
+          <div className=" lg:max-w-96">
             <p>
               Hey there! I&apos;m a CS student at the University of Toronto with
               about 2 years of practical experience in software engineering.
@@ -40,13 +40,13 @@ const AboutPage = (props: Props) => {
               physically and mentally is training Muay Thai!
             </p>
           </div>
-          <div className=" max-w-80">
+          <div className=" max-w-80 min-w-44 md:mx-auto lg:py-0 py-5">
             <Image
               src={"/headshot.jpg"}
               height={300}
               width={300}
               alt="profile-picture"
-              className="rounded-full"
+              className="rounded-full min-w-44"
             />
           </div>
         </div>
