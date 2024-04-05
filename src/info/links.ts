@@ -312,4 +312,11 @@ export const Projects: Project[] = [
     link: "https://github.com/ElhamBadri2411/todolist",
     colour: "green",
   },
+  {
+    title: "Encryption Library",
+    description: "encryption library in Python",
+    image: "/encryption.jpg",
+    link: "https://github.com/hadialhakeem/Encryption",
+    colour: "yellow",
+  },
 ];
