@@ -44,7 +44,7 @@ const Experience = (props: Props) => {
                   </div>
                 </Link>
                 {experience.hasNotes && (
-                  <Link href={`/blog/${experience.company}`}>
+                  <Link href={`/blog/${experience.company.toLowerCase()}`}>
                     <Button size={"sm"}>Notes</Button>
                   </Link>
                 )}
