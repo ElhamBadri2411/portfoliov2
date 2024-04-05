@@ -60,7 +60,7 @@ const componentsCustom: MDXComponents = {
     { src, alt } // Add src and alt attributes for images
   ) => RoundedImage({ src, alt }),
   code: ({ children }) => (
-    <div className=" w-full pl-1 pr-3 py-5 rounded-md bg-gray-950">
+    <div className=" w-full pl-1 pr-3 py-5 rounded-md bg-gray-800 text-white">
       <code className="p-1">{children}</code>
     </div>
   ),
@@ -82,6 +82,7 @@ export default async function MDXRender({ blogpost }: Props) {
       <MDXRemote
         source={blogpost.body}
         components={componentsCustom}
+        // @ts-ignore
         options={options}
       />
     </>
