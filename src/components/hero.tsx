@@ -40,7 +40,7 @@ export default function Hero() {
               <h1 className="text-6xl font-bold my-16">
                 Hey, I&apos;m
                 <span className="text-primary"> Elham! </span>
-                <span className=" animate-bounce inline-block">👋</span>
+                <span className=" animate-wave inline-block">👋</span>
               </h1>
             </div>
             <p className="mb-4">

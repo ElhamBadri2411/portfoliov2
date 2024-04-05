@@ -51,6 +51,13 @@ type Experience = {
   hasNotes: boolean;
 };
 
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+};
+
 export const Links: Link = {
   github: "https://www.github.com/elhambadri2411",
   linkedin: "https://www.linkedin.com/in/elhamb/",
@@ -236,5 +243,44 @@ export const Experiences: Experience[] = [
     link: "https://sunnybrook.ca/",
     image: "/sunnybrook_health_sciences_centre_logo.jpg",
     hasNotes: false,
+  },
+];
+
+export const Projects: Project[] = [
+  {
+    title: "Project 1",
+    description: "Description 1",
+    image: "/project1.jpg",
+    link: "https://www.example.com",
+  },
+  {
+    title: "Project 2",
+    description: "Description 2",
+    image: "/project2.jpg",
+    link: "https://www.example.com",
+  },
+  {
+    title: "Project 3",
+    description: "Description 3",
+    image: "/project3.jpg",
+    link: "https://www.example.com",
+  },
+  {
+    title: "Project 1",
+    description: "Description 1",
+    image: "/project1.jpg",
+    link: "https://www.example.com",
+  },
+  {
+    title: "Project 2",
+    description: "Description 2",
+    image: "/project2.jpg",
+    link: "https://www.example.com",
+  },
+  {
+    title: "Project 3",
+    description: "Description 3",
+    image: "/project3.jpg",
+    link: "https://www.example.com",
   },
 ];

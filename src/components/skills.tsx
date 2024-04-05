@@ -10,15 +10,15 @@ const coloursMap: any = {
   java: "hover:bg-[#F09310]",
   clang: "hover:bg-[#659BD3]",
   Python: "hover:bg-[#D1B000]",
-  Csharp: "hover:bg-[#0078D4]",
+  Csharp: "hover:bg-[#6F42C1]",
   Mysql: "hover:bg-[#007FFF]",
-  Postgresql: "hover:bg-[#6F42C1]",
+  Postgresql: "hover:bg-[#007FFF]",
   Javascript: "hover:bg-[#D1b000]",
   Typescript: "hover:bg-[#007ACC]",
   Html5: "hover:bg-[#1F4E79]",
   Css3: "hover:bg-[#FF9900]",
   React: "hover:bg-[#00BDFE]",
-  Nextjs: "hover:bg-[#4CAF50]",
+  Nextjs: "hover:bg-[#4D6785]",
   Redux: "hover:bg-[#6F42C1]",
   Tailwindcss: "hover:bg-[#9BD8DD]",
   Nodejs: "hover:bg-[#4CAF50]",
@@ -59,7 +59,9 @@ const Skills = (props: Props) => {
                   // className={"hover:bg-logo-" + colour}
                 >
                   <Icon className=" w-7 h-7" />
-                  <span className="px-1.5 text-sm font-thin">{name}</span>
+                  <span className="px-1.5 text-sm font-thin text-secondary-forground">
+                    {name}
+                  </span>
                 </Badge>
               </span>
             );

@@ -6,6 +6,7 @@ import { Links } from "@/info/links";
 import { Badge } from "@/components/ui/badge";
 // import  {} from "../../../public/"
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "lucide-react";
+import Back from "@/components/back";
 type Props = {};
 
 const AboutPage = (props: Props) => {
@@ -13,8 +14,9 @@ const AboutPage = (props: Props) => {
 
   return (
     <main className="lg:container mx-auto w-full overflow-auto p-4 lg:p-16">
-      <div className="px-4 py-8 ">
-        <h1 className="pt-10 text-3xl">about me</h1>
+      <div className="px-4 pt-8 ">
+        <Back link={"/"} />
+        <h1 className="text-3xl">about me</h1>
         {/* <div className=" w-28 bg-primary h-0.5 rounded-full" /> */}
         <div className="pt-5 flex flex-col-reverse lg:flex-row justify-between">
           <div className=" lg:max-w-96">
@@ -107,24 +109,31 @@ const AboutPage = (props: Props) => {
         <br />
         <p>
           I&apos;m all about learning and trying different sorts of
-          technologies. Whether it&apos;s TypeScript, Next.js, C, Python, or any
-          other tool, I&apos;m ready to tackle challenges head-on. Whether
-          I&apos;m crafting efficient solutions with SQL or refining user
-          interfaces with Tailwind CSS, I&apos;m always exploring new
-          technologies and pushing boundaries.
+          technologies. Whether it&apos;s TypeScript, Next.js, C, Python, SQL or
+          any other tool, I&apos;m ready to tackle challenges head-on. Whether
+          I&apos;m building efficient solutions or refining user interfaces
+          with, I&apos;m always exploring new technologies and pushing
+          boundaries.
         </p>
         <br />
         <p>
-          In software development, I&apos;m not just a coder—I&apos;m a
-          problem-solver and an optimizer. From designing scalable architectures
-          to fine-tuning database performance, I&apos;m dedicated to enhancing
-          user experiences and streamlining development processes.
+          In the field of software development, I don&apos;t just write code, I
+          love solving problems and creating solutions. I really enjoy
+          architecting new solutions and optimizing existing ones. I&apos;m
+          always looking for ways to improve my skills and learn new
+          technologies, and I&apos;m excited to take on new challenges.
         </p>
         <br />
         <p>
-          So, if you&apos;re looking for a versatile developer with a passion
-          for innovation and a knack for problem-solving, look no further. Feel
-          free to reach out on:
+          So, if you&apos;re looking for a software engineer with a passion for
+          innovation and a knack for problem-solving, look no further. Check out
+          my{" "}
+          <Link
+            href={"/Elham_Badri_Resume.pdf"}
+            className="text-primary hover:underline">
+            resume
+          </Link>{" "}
+          and feel free to reach out on:
         </p>
 
         <div className="py-10 px-20 flex justify-around items-center mx-auto">
@@ -150,14 +159,7 @@ const AboutPage = (props: Props) => {
           </Link>
           {/* <MailIcon className="text-gray-600 h-6 w-6" /> */}
         </div>
-        <p>
-          and check out my{" "}
-          <Link href={"/Elham_Badri_Resume.pdf"} locale={false}>
-            resume
-          </Link>{" "}
-          for a deeper dive into my technical expertise. Let&apos;s collaborate
-          and bring some incredible ideas to life!
-        </p>
+        <p>Let&apos;s collaborate and bring some incredible ideas to life!</p>
       </div>
     </main>
   );

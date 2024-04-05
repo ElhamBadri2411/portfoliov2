@@ -1,11 +1,18 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { HoverEffect } from "./card-hover-effect";
+import { Project } from "@/info/links";
 
-type Props = {}
+type Props = {
+  projects: Project[];
+};
 
-function projects({}: Props) {
+function Projects({ projects }: Props) {
   return (
-    <div>projects</div>
-  )
+    <div className="max-w-5xl mx-auto">
+      <HoverEffect items={projects} />
+    </div>
+  );
 }
 
-export default projects
+export default Projects;

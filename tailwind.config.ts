@@ -19,8 +19,7 @@ const config = {
     },
     extend: {
       colors: {
-        logo: {
-        },
+        logo: {},
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -69,11 +68,21 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "15%": { transform: "rotate(14deg)" },
+          "30%": { transform: "rotate(-14deg)" },
+          "40%": { transform: "rotate(14deg)" },
+          "60%": { transform: "rotate(-14deg)" },
+          "75%": { transform: "rotate(20deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-new": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        wave: "wave 1.5s infinite",
       },
     },
   },
