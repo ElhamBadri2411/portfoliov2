@@ -40,7 +40,7 @@ const AboutPage = (props: Props) => {
               physically and mentally is training Muay Thai!
             </p>
           </div>
-          <div className=" max-w-80 min-w-44 md:mx-auto lg:py-0 py-5">
+          <div className="flex items-center justify-center max-w-80 min-w-44 mx-auto lg:py-0 py-5 w-full">
             <Image
               src={"/headshot.jpg"}
               height={300}
