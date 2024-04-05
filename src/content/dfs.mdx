@@ -6,41 +6,139 @@ image: /taqauto_logo.jpg
 length: 5 min read
 ---
 
-## Introduction
+What influences developers to adopt a product?
 
-YAPYAPYAP
+Trust. The tools they adopt and advocate for impact their reputation. You might have heard “no one ever got fired for buying IBM” in reference to making good choices.
 
-## What changed
+But picking older, well-adopted tools can be at odds with how fast the industry moves. Is there a newer alternative that solves my needs better? Ask your developer.
 
-1. The greeting in the [home page](/) now includes the name of the country you're visiting my website from, and I added my social links in the description.
-2. The [projects](/projects) grid has been modified into a list. It previously had to calculate the columns size based on the screen width, but it caused a weird and ugly layout shift due to said calculation taking a second or two.
-   (_Thanks for the feedback, [Ed](https://twitter.com/edpratti)_)
-3. I removed the inspiration and contact pages. Inspiration was hardly ever maintained and just added noise to the footer in my opinion. Contact was too small in terms of content, so I moved it into the [about page](/about), to complement it.
-4. Added new photos to the [about page](/about). A new random photo will appear every time you reload the page.
-5. Improved the writing and content of the [about page](/about). I wanted it to be both semi-professional and casual, so it is now split into two sections. The first one includes information related to my work and projects, the second one just more personal details about my life, hobbies and whatnot.
-6. The [blog page](/blog) stays almost the same except the post details (date, reading time and views count) have a slightly different look. Which also was changed in both the blog posts list and the blog post page, providing some consistency in both places.
-7. The blog post page has a slightly modified layout to make the content easier to read and the ui more consistent overall.
-8. It also includes a collapsible Table of Contents, so if you wanted it to, it won't get into the reading flow.
-9. Code blocks in blog posts have been improved. I moved from [rehype-prism-plus](https://www.npmjs.com/package/rehype-prism-plus) to [rehype-pretty-code](https://rehype-pretty-code.netlify.app/). I did this change mostly because I saw it in [Lee Rob](https://leerob.io/)'s website source code 😅, but I think it makes things easier to set up, like code titles and line highlighting and more.
-10. With the previous change, I can also theme the code blocks with my favorite VS Code theme: [Pace Theme](https://github.com/fabian-hiller/vscode-pace-theme). To me it looks way better and I don't have to define colors for every token in a code block 😅
-11. Some of the images around the website can be “zoomed” now. It just increases the image size a bit, but I thought it was a nice detail to have. I must admit I took this idea from [Joel Califa](https://joelcalifa.com/)'s [blog](https://joelcalifa.com/blog/)
-12. The search for blog posts and projects is gone. This allowed me to keep these pages as server components. You can still use the browsers `Find` option to look for content. Using the `ctrl + F` or `cmd + F` shortcuts.
-13. The [donate page](/donate) has some changes to make the content easier to read. I also am listing all my active sponsors now. Before, `star` tier sponsors were not included, but not anymore. I'm really thankful for every person that supports my work.
-14. The [uses page](/uses) has a completely different interface now. I have organized the content into tabs, making it easier to navigate or focus on a specific section if you will.
-15. The [dashboard](/dashboard) has been modified to include less stats about my social networks (followers counts specifically) and make it more focused on my content, projects and sponsors.
-16. I liked having my [Instagram](https://instagram.com/jahirfiquitiva) feed in my about page before, which showed the six most recent posts. Now, I have made it into a single random post out of those six, and it's part of the dashboard.
-17. I removed the list of my top tracks, the songs that I have listened the most in the past 4 weeks. I only kept the song I'm currently listening to or the last one played.
-    If you're still interested in my top tracks, I have created a playlist that is automatically updated every day. Feel free to check it out at [tunez.jahir.dev](https://tunez.jahir.dev)
-18. The dashboard grid had a blank space that I didn't know what to put in, so I decided to add a link to my [bento](https://links.jahir.dev) page. It is also a collection of links for different things related to me and also links back to this website (_recursion much (?)_)
-19. The footer now includes a button to scroll back to top. The website already included a floating button, but it hides when you get to the footer to prevent it from blocking some content, so it felt good to have another button in the footer too.
-20. The toolbar now has three states: normal or resting (no shadow), elevated (subtle shadow) and hovered (more prominent shadow).
-21. The text shadows colors are lighter, the gradient colors are more vivid and some animations or transitions are more subtle now (_again, thanks for the suggestions, [Ed](https://twitter.com/edpratti)_)
-22. Probably the biggest change is not in the interface, but behind the scenes. The website is now built using the new Next.js [App Router](https://beta.nextjs.org/docs/getting-started#introducing-the-app-router), which allowed me to have server components and improve the website's overall performance significatively.
-    _Thanks to [Dylan](https://evowizz.dev) for advocating for App Router, convincing me to switch to it, and providing additional help._
-23. Along with this change, I decided to move from [Stitches](https://stitches.dev) to [Tailwind CSS](https://tailwindcss.com/). After being away from the website's codebase for a few months, getting back to Stitches made me feel a bit lost. Now with Tailwind CSS many of my styles and components where simplified, which I hope improves the developer experience in the future. Not just for me, but anyone who would like to get their hands on my website's [source code](https://github.com/jahirfiquitiva/jahir.dev).
+Keeping up the latest trends is part of their job. They need to know what's a fad and what's here to stay. This is why experienced developers become skeptical of almost everything. It's hard to earn their trust.
 
-> I planned to add images, gifs and videos to this blog post, but I felt like it would have been probably too much. Besides, you can actually view the changes listed above by navigating through the different pages in my website. 😅
+Developer marketing is about building trust. Here's what's worked for me.
 
-## Conclusion
+## How can I improve my developer marketing?
 
-more yapper ap yap tyap
+1. Don’t publish content you wouldn’t share yourself.
+2. Always consider how you can build developer trust. It’s not a one-time transaction. It’s reflected in every product and marketing decision you make.
+3. When something sucks with your product, own it. Don’t try to hide the failure. Lean into it. Bring the community along for the continuous iteration of your product. “You told us this was bad, and we fixed it”. Follow up with people after you ship.
+4. Get involved in the community. Host, attend, or sponsor a hackathon or meetup. Spend time talking to developers 1:1. Their feedback drives product improvements _and_ content ideas. Where are people struggling? Write about that.
+5. Create a [developer experience so good](https://leerob.io/blog/developer-experience-examples) that it does marketing for you. Write docs worth sharing, filled with helpful diagrams and detailed descriptions. Create code examples and templates that help developers get started quickly.
+
+## Throw out the old playbook
+
+Developers _love_ great marketing, but most companies get it wrong.
+
+They’re trying to apply the enterprise marketing playbook to the wrong audience.
+
+- **Enterprise Marketing**
+  - **Goal**: Grow pipeline and revenue
+  - **Audience**: Directors, VPs, or C-suite
+  - **Buyer Interests**: Increased efficiency, cost savings, innovation
+  - **How**: Sales-served, sign a yearly contract for a discount
+- **Developer Marketing**
+  - **Goal**: Grow retained signups and community awareness
+  - **Audience**: Individual developers
+  - **Buyer Interests**: Transferable skills, affordable, great developer experience
+  - **How**: Self-serve, start free then swipe a credit card
+
+## What does great developer marketing look like?
+
+I’m a developer who [works](/work) at the intersection of engineering, product, and marketing. Based on my experience, the best developer marketing:
+
+1. **Teaches how to build great products**
+2. **Builds and retains trust**
+3. **Uses precise language**
+
+### How did they build that!?
+
+When I see a great developer tool, my first thought is: **how did they build that?**
+
+There’s a natural curiosity. I want to reverse engineer the product and [learn new tools](https://vercel.com/blog/introducing-next-js-commerce-2-0) or skills I can apply to my work.
+
+The best developer marketing shows how to build great product experiences. Bonus points if you capture the “current thing” – a new AI tool, or a popular style of app (TikTok clone).
+
+Great developer marketing is invoking this response as a service.
+
+### Zero days since the latest JavaScript framework
+
+Developers don’t try your product the first time they hear about it. They certainly don’t want to talk to someone to get access first.
+
+They need to hear positive feedback several times before they trust it enough to try. That's why **building, growing, and retaining developer trust is everything.**
+
+Trust comes from your marketing being helpful regardless of the product. And retention comes from [making something developers actually want](/blog/make-something-developers-want).
+
+Individual developers are tired of enterprise marketing being used on them. They’re the wrong audience—they don’t want the cold calls or unhelpful emails. And if you lose their trust, they’re quick to move on to other products.
+
+Trust is built (or lost) through the content you create and put out into the community. It’s a reflection of what you stand for.
+
+Here are some of my red flags when reading developer content:
+
+- **Buzzwords and acronyms**: Sometimes these are necessary, but there’s a lot of copywriting that looks like “cutting-edge, LLM-powered RAG platform” when it should really be “bring knowledge to your AI model”. Acronyms also alienate newcomers.
+- **Misusing technical terms**: "Our JavaScript framework helps you make responsive websites” – does it though, or is that CSS? This can degrade trust because it shows the author might not have a deep understanding of the subject. Another example is broken or incorrectly formatted code examples. Did they even check that it works?
+- **Overpromising simplicity**: The developer ecosystem is too obsessed with simplicity. I’m guilty. While “get started in one click” might be good sometimes, it can also be harmful. Maybe I want more options? "Simply install our SDK" might not be as simple as it sounds.
+- **Vague explanations**: Developers want a practical example of what your product does. “Utilizing the latest technology to supercharge your development process”. Is this an editor, framework, database, or something else?
+
+Developers are more likely to trust open-source tools. These tools likely [have a community](https://janairis.medium.com/five-pillars-of-building-developer-communities-at-hashicorp-9c8f50198eb8) of other developers learning together. They can take their knowledge of the tool from job to job as they grow in their career.
+
+### Show, don’t tell
+
+Great developer marketing is both _concise_ and _precise_.
+
+It values your time—every word matters. Show them how to build interesting things, don’t fill a post with 1000 words of garbage.
+
+Consider an email announcing a new version of your product. The pricing has changed, and there's a data migration.
+
+- **How can I make it concise?**
+  - **Put the bottom line up front**: If I stop reading after the first paragraph, did I get what I needed to know? Is there action required? Put that in the email subject line.
+  - **Make it easy to scan**: The visual flow of the content is as important as the words you choose. They should be able to quickly scan for landmarks (like code examples or commands they need to run).
+- **How can I make it precise?**
+  - **Address their fears directly**: This email mentions a migration. Am I going to lose my data? Do I need to make changes right away? Am I going to be charged more?
+  - **Personalize the content**: Show them their team name, the date the migration starts and finishes in UTC, exactly how much their price was before and after, and how they can take action (maybe a CLI command that shows their usage).
+
+## What do you want them to remember?
+
+Your product is competing between thousands of others for developer mindshare. You believe yours is better. How do you share that message?
+
+Let the product speak for itself. Listen to customer feedback and iterate. If your marketing isn’t working, their feedback should tell you why.
+
+This tweet is provocative, but it makes a point: you can't fix a bad product with more marketing and sales. When you believe in the product, you don’t need to speak down against others. I prefer to do the opposite.
+
+I believe in optimism for software, the web, and the community I’m building. I want people to remember I was helpful, positive, and enthusiastic about the product.
+
+## Wait, what about DevRel?
+
+[Developer Relations](/blog/devrel-at-vercel) is more than only developer marketing. It's the intersection between product, engineering, marketing, and sales.
+
+For early companies, you might only need DevRel. They are generalists. But as you grow, you need to specialize. Get the right leaders for both developers and enterprise marketing.
+
+Developer marketing leaders come from non-marketing roles (engineering, developer relations). They love showing developers how to build amazing things.
+
+Enterprise marketing leaders come from traditional marketing roles (content, product marketing, growth). They can sell to developers, even if not one, and know how to build a pipeline generating engine.
+
+It’s possible for one person to do both sides of marketing well, but rare.
+
+## Code Example:
+
+```jsx
+function Table({ data }) {
+  let headers = data.headers.map((header, index) => (
+    <th key={index}>{header}</th>
+  ));
+  let rows = data.rows.map((row, index) => (
+    <tr key={index}>
+      {row.map((cell, cellIndex) => (
+        <td key={cellIndex}>{cell}</td>
+      ))}
+    </tr>
+  ));
+
+  return (
+    <table>
+      <thead>
+        <tr>{headers}</tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+}
+```
