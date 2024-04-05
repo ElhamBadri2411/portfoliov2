@@ -46,7 +46,7 @@ const Skills = (props: Props) => {
               {/* <RssIcon className="text-orange-500 h-6 w-6" /> */}
               {/* <Button className=" bg-primary text-white">RSS Feed</Button> */}
               <Link href={"/Elham_Badri_Resume.pdf"} locale={false}>
-                <Button className="bg-primary text-white">Resume</Button>
+                <Button className="bg-primary ">Resume</Button>
               </Link>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import HeroProjects from "@/components/heroprojects";
 import React from "react";
 import HeroBlog from "@/components/heroblog";
 import Skills from "@/components/skills";
@@ -12,6 +13,7 @@ const Page = (props: Props) => {
       <Hero />
       <HeroBlog />
       <Skills />
+      <HeroProjects />
       <Experience />
     </main>
   );

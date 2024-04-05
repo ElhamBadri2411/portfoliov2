@@ -15,7 +15,7 @@ export default function HeroBlog() {
             <h4 className="text-2xl font-semibold">From the blog</h4>
             <div className="flex items-center space-x-2">
               <Link href={"/blog"}>
-                <Button className="bg-primary text-white">View all</Button>
+                <Button className="bg-primary ">View all</Button>
               </Link>
             </div>
           </div>

@@ -56,6 +56,7 @@ export type Project = {
   description: string;
   image: string;
   link: string;
+  colour: string;
 };
 
 export const Links: Link = {
@@ -248,39 +249,61 @@ export const Experiences: Experience[] = [
 
 export const Projects: Project[] = [
   {
-    title: "Project 1",
-    description: "Description 1",
-    image: "/project1.jpg",
-    link: "https://www.example.com",
+    title: "Playbook",
+    description: "social media platform for gamers",
+    image: "/playbook.jpg",
+    link: "https://github.com/ElhamBadri2411/playbook",
+    colour: "red",
   },
   {
-    title: "Project 2",
-    description: "Description 2",
-    image: "/project2.jpg",
-    link: "https://www.example.com",
+    title: "WikiMe",
+    description: "generate quizzes using Wikipedia",
+    image: "/wikime.jpg",
+    link: "https://github.com/ElhamBadri2411/wikiquiz-serve",
+    colour: "blue",
   },
   {
-    title: "Project 3",
-    description: "Description 3",
-    image: "/project3.jpg",
-    link: "https://www.example.com",
+    title: "MyBnb",
+    description: "command line airbnb clone in java and mysql",
+    image: "/mybnb.jpg",
+    link: "https://github.com/ElhamBadri2411/mybnb",
+    colour: "green",
+  },
+  //do the rest for: healthschedule, vent, soacialphoto, sortingvisualizer, todolist, link will be the form:
+  // https://github.com/ELhamBadri2411/<project name>, please autogenerate the link
+  {
+    title: "HealthSchedule",
+    description: "scheduling android app for health clinics",
+    image: "/healthschedule.jpg",
+    link: "https://github.com/ElhamBadri2411/healthschedule",
+    colour: "yellow",
   },
   {
-    title: "Project 1",
-    description: "Description 1",
-    image: "/project1.jpg",
-    link: "https://www.example.com",
+    title: "Vent",
+    description: "anonymous social media where you vent your feelings",
+    image: "/vent.jpg",
+    link: "https://github.com/ElhamBadri2411/vent",
+    colour: "purple",
   },
   {
-    title: "Project 2",
-    description: "Description 2",
-    image: "/project2.jpg",
-    link: "https://www.example.com",
+    title: "SocialPhoto",
+    description: "social media platform for photographers",
+    image: "/socialphoto.jpg",
+    link: "https://github.com/ElhamBadri2411/socialphoto",
+    colour: "red",
   },
   {
-    title: "Project 3",
-    description: "Description 3",
-    image: "/project3.jpg",
-    link: "https://www.example.com",
+    title: "SortingVisualizer",
+    description: "visualize sorting algorithms",
+    image: "/sorting.jpg",
+    link: "https://github.com/ElhamBadri2411/sortingvisualizer",
+    colour: "blue",
+  },
+  {
+    title: "ToDoList",
+    description: "simple todo list app",
+    image: "/todolist.jpg",
+    link: "https://github.com/ElhamBadri2411/todolist",
+    colour: "green",
   },
 ];
