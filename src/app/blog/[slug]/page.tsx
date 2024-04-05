@@ -9,7 +9,7 @@ type Props = {
 const BlogEntryPage = ({ params }: Props) => {
   let post = getBlogPosts().find((post) => post.slug === params.slug)!;
   return (
-    <div className="md:container relative mx-auto w-full overflow-auto p-4 print:p-12 md:p-16">
+    <div className="md:container relative mx-auto w-full overflow-auto p-4 print:p-12 md:px-16">
       <main className="px-4 py-8 ">
         <section>
           <h1 className="pt-10 text-4xl font-semibold max-w-3xl">

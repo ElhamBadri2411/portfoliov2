@@ -13,7 +13,7 @@ const AboutPage = (props: Props) => {
   const { github, linkedin, twitter, email } = Links;
 
   return (
-    <main className="lg:container mx-auto w-full overflow-auto p-4 lg:p-16">
+    <main className="lg:container mx-auto w-full overflow-auto p-4 lg:px-16">
       <div className="px-4 pt-8 ">
         <Back link={"/"} />
         <h1 className="text-3xl">about me</h1>
