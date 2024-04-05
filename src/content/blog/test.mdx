@@ -1,0 +1,88 @@
+---
+title: test blog
+date: 2022-04-05
+summary: First test blog, to test markdown
+image: /test.jpg
+length: 5 min read
+---
+
+# Markdown syntax guide
+
+## Headers
+
+# This is a Heading h1
+
+## This is a Heading h2
+
+###### This is a Heading h6
+
+## Emphasis
+
+_This text will be italic_  
+_This will also be italic_
+
+**This text will be bold**  
+**This will also be bold**
+
+_You **can** combine them_
+
+## Lists
+
+### Unordered
+
+- Item 1
+- Item 2
+- Item 2a
+- Item 2b
+
+### Ordered
+
+1. Item 1
+2. Item 2
+3. Item 3
+   1. Item 3a
+   2. Item 3b
+
+## Links
+
+You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
+
+## Blockquotes
+
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
+>
+> > Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+## Blocks of code
+
+### Java
+
+```Java
+  public static void main(String[] args) {
+
+     // call the method getSize()
+     // using the object SMALL
+     System.out.println("The size of Pizza I get is " + Size.SMALL.getSize());
+
+     // call the method getSize()
+     // using the object LARGE
+     System.out.println("The size of Pizza I want is " + Size.LARGE.getSize());
+  }
+```
+
+### C
+
+```c
+#include <stdio.h>
+int main() {
+    char c;
+    printf("Enter a character: ");
+    scanf("%c", &c);
+
+    // %d displays the integer value of a character
+    // %c displays the actual character
+    printf("ASCII value of %c = %d", c, c);
+
+    return 0;
+}
+```

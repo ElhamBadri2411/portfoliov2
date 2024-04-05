@@ -1,22 +1,22 @@
 import React from "react";
-import { Experiences as experiences } from "@/info/links";
+import { Experience as ExperienceType } from "@/info/links";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
-type Props = {};
+type Props = {
+  experiences: ExperienceType[];
+  isHero?: boolean;
+};
 
-const Experience = (props: Props) => {
+const Experience = ({ experiences, isHero }: Props) => {
   return (
     <div className="">
-      <main className="px-4 py-8  lg:container ">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="text-2xl font-semibold">Experience</h4>
-        </div>
+      <main className="pt-10 lg:container ">
         {experiences.map((experience, i) => {
           return (
-            <div className="md:pr-20" key={experience.company}>
-              <div className=" z-50 flex justify-between items-center rounded-lg border border-gray-200 p-4 shadow-sm transition-colors hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-200 bg-transparent">
+            <div className="" key={experience.company}>
+              <div className="flex justify-between items-center rounded-lg border border-gray-200 p-4 shadow-sm transition-colors hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-200 bg-transparent">
                 {/*  dark:bg-gray-950 dark:hover:border-gray-700"> */}
                 <Link href={experience.link} className="group">
                   <div className="flex flex-row">
@@ -43,11 +43,13 @@ const Experience = (props: Props) => {
                     </div>
                   </div>
                 </Link>
-                {experience.hasNotes && (
-                  <Link href={`/blog/${experience.company.toLowerCase()}`}>
-                    <Button size={"sm"}>Notes</Button>
+                {
+                  <Link href={`/experience/${experience.slug}`}>
+                    <Button variant={"link"} size={"lg"}>
+                      Notes
+                    </Button>
                   </Link>
-                )}
+                }
               </div>
               {i != experiences.length - 1 && (
                 <div

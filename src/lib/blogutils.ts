@@ -10,7 +10,11 @@ type Frontmatter = {
   length: string;
 };
 
-export function parseFrontmatter(content: string) {
+enum FileType {
+  BLOG = "blog",
+}
+
+export function parseFrontmatter(content: string, type: FileType) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(content);
 
@@ -33,25 +37,35 @@ export function parseFrontmatter(content: string) {
     frontmatter[key] = value;
   }
 
-  return {
-    frontmatter: frontmatter as Frontmatter,
-    body: body,
-  };
+  if (type === FileType.BLOG) {
+    return {
+      frontmatter: frontmatter as Frontmatter,
+      body: body,
+    };
+  }
 }
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((f) => path.extname(f) === ".mdx");
 }
 
-function readMDXFile(file: string) {
-  const content = fs.readFileSync(file, "utf-8");
-  return parseFrontmatter(content);
+export function getNote(slug?: string) {
+  const dir = path.join(process.cwd(), "/src/content/work");
+  return fs.readFileSync(path.join(dir, `${slug}.mdx`), "utf-8");
 }
 
-function getBlogData(dir: string) {
+function readMDXFile(file: string, type: FileType) {
+  const content = fs.readFileSync(file, "utf-8");
+  return parseFrontmatter(content, type);
+}
+
+function getMDXData(dir: string, type: FileType) {
   const files = getMDXFiles(dir);
   return files.map((f) => {
-    const { frontmatter, body } = readMDXFile(path.join(dir, f))!;
+    const { frontmatter, body } = readMDXFile(
+      path.join(dir, f),
+      FileType.BLOG
+    )!;
     const slug = path.basename(f, path.extname(f));
     return {
       frontmatter,
@@ -62,11 +76,14 @@ function getBlogData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getBlogData(path.join(process.cwd(), "/src/content")) as BlogPost[];
+  return getMDXData(
+    path.join(process.cwd(), "/src/content/blog"),
+    FileType.BLOG
+  ) as BlogPost[];
 }
 
 export type BlogPost = {
-  frontmatter: Frontmatter;
+  frontmatter?: Frontmatter;
   body: string;
-  slug: string;
+  slug?: string;
 };

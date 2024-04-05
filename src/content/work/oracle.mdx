@@ -1,0 +1,35 @@
+- Implemented UI and backend features using Java, TypeScript, and SQL, enhancing user experience
+- Drove a 60% improvement in search speed and user satisfaction through development of new search feature
+- Achieved stability and reliability of features by conducting thorough unit testing, leading to 100% code coverage
+- Resolved frontend and backend bugs successfully, improving stability and performance of the application
+
+<br />
+<hr />
+<br />
+
+### Co-op Assignment
+
+##### Improving Query Performance and Security with Bind Variable
+
+As a software developer, I am always looking for ways to improve the performance and security of my code. One technique that is effective is the use of bind variables in SQL statements.
+
+Bind variables are placeholders for values in a SQL statement. They are used to improve the performance of queries by allowing the database server to cache the execution plan for the statement. They also help protect from SQL injections because you are not running raw SQL queries in your database.
+
+For example, consider the following Java code that uses a Prepared Statement with a bind variable to retrieve rows from a table:
+
+```Java
+// Create the prepared statement
+String sql = "SELECT * FROM employees WHERE salary > ?";
+pstmt = conn.prepareStatement(sql);
+
+// Bind the value to the first bind variable
+pstmt.setInt(1, 100);
+
+// Execute the statement
+rs = pstmt.executeQuery();
+
+```
+
+In this code, a Prepared Statement object is created with a SELECT statement that includes a bind variable "?". The value for the bind variable is then set using the "setInt" method, and the statement is executed using the "executeQuery" method.
+
+By using bind variables in this way, I was able to improve the performance of my queries by allowing the database server to cache the execution plan for the statement. This helped to reduce the load on the database server and improve the overall performance of the application.

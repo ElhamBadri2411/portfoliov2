@@ -11,7 +11,11 @@ const Footer = () => {
     <footer className="border-t py-6 px-4 md:px-12">
       <div className="flex flex-col md:flex-row md:justify-between items-center">
         <div className="mb-4 md:mb-0">
-          <p className="text-sm md:pl-3.5 pl-14">Elham Badri</p>
+          <Link href="/">
+            <p className="text-sm md:pl-3.5 pl-14 hover:underline">
+              Elham Badri
+            </p>
+          </Link>
           <div className="flex space-x-4 mt-4">
             <Link href={github}>
               <Badge className="shadow-sm shadow-black/30 rounded-full bg-background text-primary hover:text-[#fff0f0]">
@@ -55,6 +59,13 @@ const Footer = () => {
               <Link href="/projects">
                 <span className="text-gray-600 cursor-pointer hover:underline">
                   Projects
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/experience">
+                <span className="text-gray-600 cursor-pointer hover:underline">
+                  Experience
                 </span>
               </Link>
             </li>

@@ -31,9 +31,9 @@ export const Navbar = (props: Props) => {
                   Projects
                 </Button>
               </Link>
-              <Link href={"/Elham_Badri_Resume.pdf"}>
+              <Link href={"/experience"}>
                 <Button className="p-1.5" variant={"navbar"}>
-                  Resume
+                  Experience
                 </Button>
               </Link>
               <div>

@@ -1,0 +1,98 @@
+- Transformed a monolithic .NET application to a microservices architecture to improve maintainability and reduce costs, creating new SQL stored procedures for efficient data retrieval
+- Rewrote and migrated critical validation endpoints from C# to JavaScript, resulting in improved performance and maintainability; validated through Jest unit testing
+- Diagnosed and resolved critical bugs, including various timeout errors, increasing system efficiency by 15%
+- Migrated applications to AWS with Kubernetes and Docker, effectively using OpenLens for debugging
+- Improved efficiency of internal Python scripts by 60% though implementation of multi-threading
+- Perfromed Apache JMeter load testing to ensure application integrity and performance under stress
+- Created a SQL script to mask all PII data, ensuring compliance with SOC 2 standards
+
+<br />
+<hr />
+<br />
+
+### Co-op Assignment 2
+
+<br />
+#### soon
+
+<br />
+<hr />
+<br />
+### Co-op Assignment 1
+
+<br />
+#### Splitting monolithic applications into microservices
+
+microservices have many benefits over monolithic applications such as:
+
+1. Improved scalability
+2. Easier Maintenance
+3. Easier to develop
+
+This is due to the fact that each service is seperate from the rest making it easier to developers to increase the number of instances, fix bugs in each service, and not have to worry about too many dependencies when developing new features
+
+Let's look at the following example:
+
+```Python
+# Monolithic Python Flask Application
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Routes for different functionalities
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/products')
+def products():
+    return render_template('products.html')
+
+@app.route('/orders')
+def orders():
+    return render_template('orders.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Now let's break this "monolith" (this is a very small example) into 2 different microservices:
+
+catalog microservice
+
+```Python
+# Catalog Microservice
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/products')
+def products():
+    # Product-related logic
+    return render_template('products.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
+```
+
+order microservice
+
+```Python
+# Order Microservice
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/orders')
+def orders():
+    # Order-related logic
+    return render_template('orders.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5002)
+```
+
+By splitting up this into 2 seperate microservices, you can decouple the logic, gaining all the benefits of using microservices

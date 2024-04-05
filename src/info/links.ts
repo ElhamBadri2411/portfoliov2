@@ -41,14 +41,15 @@ type Skill = {
   colour: string;
 };
 
-type Experience = {
+export type Experience = {
   company: string;
   position: string;
   from: string;
   to?: string;
   link: string;
   image: string;
-  hasNotes: boolean;
+  slug?: string;
+  location: string;
 };
 
 export type Project = {
@@ -207,7 +208,8 @@ export const Experiences: Experience[] = [
     to: "Apr 2024",
     link: "https://www.taqauto.com/",
     image: "/taqauto_logo.jpg",
-    hasNotes: true,
+    location: "Markham, ON",
+    slug: "taq",
   },
   {
     company: "University of Toronto Scarborough",
@@ -216,7 +218,8 @@ export const Experiences: Experience[] = [
     to: "Aug 2023",
     link: "https://www.cathcrosscultural.org/",
     image: "/university_of_toronto_scarborough_logo.jpg",
-    hasNotes: false,
+    location: "Toronto, ON",
+    slug: "utsc",
   },
   {
     company: "Oracle",
@@ -225,7 +228,8 @@ export const Experiences: Experience[] = [
     to: "Dec 2022",
     link: "https://www.oracle.com/ca-en/",
     image: "/oracle_logo.jpg",
-    hasNotes: true,
+    location: "Kitchener, ON",
+    slug: "oracle",
   },
   {
     company: "KHERG",
@@ -234,7 +238,8 @@ export const Experiences: Experience[] = [
     to: "Aug 2022",
     link: "https://nefros.net/",
     image: "/kidney_health_education_and_research_group_logo.jpg",
-    hasNotes: false,
+    location: "Toronto, ON",
+    slug: "kherg",
   },
   {
     company: "Sunnybrook",
@@ -243,7 +248,8 @@ export const Experiences: Experience[] = [
     to: "May 2022",
     link: "https://sunnybrook.ca/",
     image: "/sunnybrook_health_sciences_centre_logo.jpg",
-    hasNotes: false,
+    location: "Toronto, ON",
+    slug: "sunnybrook",
   },
 ];
 

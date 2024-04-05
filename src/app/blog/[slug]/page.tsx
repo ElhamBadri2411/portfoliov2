@@ -13,21 +13,21 @@ const BlogEntryPage = ({ params }: Props) => {
       <main className="px-4 py-8 ">
         <section>
           <h1 className="pt-10 text-4xl font-semibold max-w-3xl">
-            {post.frontmatter.title}
+            {post.frontmatter?.title}
           </h1>
           <div className="mt-2 mb-8 text-sm flex flex-row justify-between max-w-2xl">
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {post.frontmatter.date}
+              {post.frontmatter?.date}
             </p>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {post.frontmatter.length}
+              {post.frontmatter?.length}
             </p>
           </div>
           <div className="flex flex-row items-center justify-center pt-2 pb-4">
             <Image
-              src={post.frontmatter.image}
+              src={post.frontmatter?.image || "/placeholder.jpg"}
               alt="image"
-              width={400}
+              width={800}
               height={200}
               className="rounded-lg"
             />

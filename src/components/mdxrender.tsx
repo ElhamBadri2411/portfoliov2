@@ -6,6 +6,8 @@ import Link from "next/link";
 import hljs, { HighlightOptions } from "highlight.js";
 import Image from "next/image";
 import "@/../public/monokai.css";
+import { Separator } from "./ui/separator";
+import { cn } from "@/lib/utils";
 
 type Props = {
   blogpost: BlogPost;
@@ -44,8 +46,10 @@ const componentsCustom: MDXComponents = {
   h3: ({ children }) => (
     <h3 className="py-3 text-xl font-semibold">{children}</h3>
   ),
-  h4: ({ children }) => <h4 className="">{children}</h4>,
-  h5: ({ children }) => <h5 className="">{children}</h5>,
+  h4: ({ children }) => (
+    <h4 className="text-lg font-semibold py-3">{children}</h4>
+  ),
+  h5: ({ children }) => <h5 className="underline py-3">{children}</h5>,
   h6: ({ children }) => <h6 className="">{children}</h6>,
   p: ({ children }) => <p className="py-3 text-base ">{children}</p>,
   ul: ({ children }) => <ul className="pl-5 list-disc py-3">{children}</ul>,
@@ -60,11 +64,11 @@ const componentsCustom: MDXComponents = {
     { src, alt } // Add src and alt attributes for images
   ) => RoundedImage({ src, alt }),
   code: ({ children }) => (
-    <div className=" w-full pl-1 pr-3 py-5 rounded-md bg-gray-800 text-white">
+    <div className=" w-full pl-1 pr-3 py-3 my-2 rounded-md bg-gray-800 text-white">
       <code className="p-1">{children}</code>
     </div>
   ),
-
+  hr: ({ className }) => <Separator className={cn(className, "")} />,
   // Add more components as needed (address, blockquote, pre, etc.)
   // ...
 };

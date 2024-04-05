@@ -72,11 +72,11 @@ export default function Hero() {
               Let&apos;s connect and create something awesome together!
             </p>
             <div className="flex flex-row">
-              <Link href={"/about"}>
+              <Link href={"/Elham_Badri_Resume.pdf"}>
                 <Button
                   className="bg-primary text-primary-foreground"
                   size={"lg"}>
-                  More about me
+                  Check out my resume
                 </Button>
               </Link>
             </div>
