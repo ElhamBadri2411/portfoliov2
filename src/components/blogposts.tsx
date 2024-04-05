@@ -11,6 +11,7 @@ const BlogPosts = ({ blogPosts }: Props) => {
   return (
     <div className="pt-5">
       {blogPosts.map(({ frontmatter, slug }) => {
+        if (!frontmatter) return null;
         const { title, summary, date, image, length } = frontmatter;
         return (
           <Link key={slug} href={`/blog/${slug}`}>
