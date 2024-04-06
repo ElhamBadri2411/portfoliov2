@@ -13,7 +13,40 @@
 ### Co-op Assignment 2
 
 <br />
-#### soon
+
+#### Creating an SQL Masking Script for SOC Compliance
+
+adhering to security standards like SOC is crucial for protecting sensitive information. One effective approach is implementing masking to obfuscate or anonymize data, reducing exposure risks. Here's a guide on creating an SQL masking script to make sure fields in a database are obfuscated:
+
+### Steps to Create an SQL Masking Script
+
+1. **Identify Sensitive Data**: Determine which columns in your database contain sensitive information such as credit card numbers, social security numbers, or personal identifiable information.
+
+2. **Choose Masking Techniques**: Select appropriate masking techniques based on the sensitivity of the data. Common methods include:
+
+   - _Partial Masking_: Show only a portion of sensitive data (e.g., last four digits of a social insurance number).
+     number).
+   - _Randomization_: Replace original values with randomized data.
+   - _Substitution_: Replace sensitive values with predefined values (e.g., replace names with generic labels like "Customer 1", "Customer 2", etc.).
+
+3. **Create The Script**: Implement the chosen masking techniques using SQL commands. Below is an example script using PostgreSQL syntax:
+
+   ```sql
+   -- Example: Masking Social Insurance Numbers
+   UPDATE customer_data
+   SET sin = CONCAT('XXX-XXX-', RIGHT(sin, 3)); -- Partial Masking
+
+   -- Example: Masking Credit Card Numbers
+   UPDATE payment_data
+   SET credit_card_number = 'XXXX-XXXX-XXXX-XXXX'
+   ```
+
+in the 2 examples above:
+
+1. the sin number is partially masked, with the last 4 digits being replace with an "x"
+2. the credit card number is fully masked, with all the digits being replaced with an "x"
+
+Creating these scripts helps protect sensitive customer data and creates an extra line of defense in case of a data breach.
 
 <br />
 <hr />
