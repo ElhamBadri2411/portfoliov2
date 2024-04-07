@@ -22,3 +22,9 @@ bun install
 bun dev
 ```
 
+## TODO
+- improve seo
+- add mobile accordion bar
+
+  
+
