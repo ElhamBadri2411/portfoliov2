@@ -255,6 +255,13 @@ export const Experiences: Experience[] = [
 
 export const Projects: Project[] = [
   {
+    title: "Http C Server",
+    description: "simple http server in C",
+    image: "/cserver.jpg",
+    link: "htps://github.com/ElhamBadri2411/http-c-server",
+    colour: "purple",
+  },
+  {
     title: "Playbook",
     description: "social media platform for gamers",
     image: "/playbook.jpg",
