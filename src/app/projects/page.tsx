@@ -1,7 +1,7 @@
 import Back from "@/components/back";
 import Projects from "@/components/projects";
 import React from "react";
-import { Projects as projects } from "@/info/links";
+import { Projects as projects } from "@/info/projects";
 
 type Props = {};
 

@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Skills as skills } from "@/info/links";
+import { Skills as skills } from "@/info/skills";
 import Link from "next/link";
 
 type Props = {};

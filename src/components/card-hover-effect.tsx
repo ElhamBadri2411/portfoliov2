@@ -1,4 +1,4 @@
-import { Project } from "@/info/links";
+import { Project } from "@/info/Link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";

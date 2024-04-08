@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Experiences } from "@/info/links";
+import { Experiences } from "@/info/experience";
 import Experience from "./experience";
 
 export default function HeroExperience() {

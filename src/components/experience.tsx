@@ -1,5 +1,5 @@
 import React from "react";
-import { Experience as ExperienceType } from "@/info/links";
+import { Experience as ExperienceType } from "@/info/Link";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";

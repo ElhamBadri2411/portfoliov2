@@ -1,6 +1,6 @@
 import React from "react";
 import Back from "@/components/back";
-import { Experiences } from "@/info/links";
+import { Experiences } from "@/info/experience";
 import Experience from "@/components/experience";
 
 type Props = {};

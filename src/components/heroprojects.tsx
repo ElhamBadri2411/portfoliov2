@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Projects as projects } from "../info/links";
+import { Projects as projects } from "../info/projects";
 import { Button } from "./ui/button";
 import Projects from "./projects";
 
