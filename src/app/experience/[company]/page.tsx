@@ -1,7 +1,7 @@
 import React from "react";
 
 import Back from "@/components/back";
-import { Experiences } from "@/info/links";
+import { Experiences } from "@/info/experience";
 import Image from "next/image";
 import exp from "constants";
 import { notFound } from "next/navigation";
