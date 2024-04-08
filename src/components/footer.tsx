@@ -74,7 +74,7 @@ const Footer = () => {
         <div>
           <ul className="text-sm flex space-x-4">
             <li>
-              <Link href="/resume">
+              <Link href="/Elham_Badri_Resume.pdf">
                 <span className="text-gray-600 cursor-pointer hover:underline">
                   Resume
                 </span>

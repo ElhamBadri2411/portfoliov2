@@ -258,7 +258,7 @@ export const Projects: Project[] = [
     title: "Http C Server",
     description: "simple http server in C",
     image: "/cserver.jpg",
-    link: "htps://github.com/ElhamBadri2411/http-c-server",
+    link: "https://github.com/ElhamBadri2411/HTTP-C-SERVER",
     colour: "purple",
   },
   {
