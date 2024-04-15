@@ -37,7 +37,7 @@ const coloursMap: any = {
 
 const Skills = (props: Props) => {
   return (
-    <div className="">
+    <div className="" id="skills">
       <main className="px-4 py-8  container ">
         <section>
           <div className="flex items-center justify-between mb-4">

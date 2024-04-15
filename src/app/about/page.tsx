@@ -29,7 +29,7 @@ const AboutPage = (props: Props) => {
                 projects
               </Link>{" "}
               and expand my{" "}
-              <Link href={"#skills"} className="text-primary hover:underline">
+              <Link href={"/#skills"} className="text-primary hover:underline">
                 skills
               </Link>
               .
