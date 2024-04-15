@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { HoverEffect } from "./card-hover-effect";
-import { Project } from "@/info/Link";
+import { Project } from "@/info/types";
 
 type Props = {
   projects: Project[];
