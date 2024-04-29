@@ -1,29 +1,223 @@
-
----
+ ---
 title: HTTP server in c
-date: 2024-04-27
+date: 2024-04-29
 summary: A small guide on how to build a simple HTTP server in C
-image: /test.jpg
-length: 10 min read
+image: /cserver.jpg
+length: 15 min read
 ---
 
-# Introduction
+## Introduction
 
-# Key Concepts of HTTP
+I have always been interested in trying to figure out how things work. Abstraction is a core idea in computer science and software engineering,
+but understanding what goes on behind that black box is really fun and can help you improve your skills as a software engineer. Having built websties in the past and wanting 
+a deeper understanding of how the HTTP protocol works, I really wanted to  build my own HTTP server from scratch in C. My reasons for this were:
+
+1. **Applying Network Programming Knowledge**: I wanted a way to refresh my socket programming skills and apply my theoretical understand of network programming concepts in a practical way.
+2. **The C Programming Language**: I really like using C. The simplicity of the language, its speed, and the control you get make it really appealing. 
+3. **Understanding how HTTP Servers Work**: Building my own server felt like the best way to understand how the HTTP protocol works.
+
+Along the way, I applied  concepts other than network programming. I added very simple multi-threading, where a new thread gets created for each request and I implemented a hashtable. I used the hashtable 
+to for managing routes and their handler functions. 
+
+While the server is definately not production ready, I learned a lot making this project. There are tons of improvements that could be made (will be listed later on). My aim with this blog post is to 
+share what I learned and potentially give anyone else that is looking to build their own server an idea of how I approached building mine.
+
+## Key Concepts of HTTP
+
+It is pretty important to understand **what** a HTTP server is before building it, so here is high level overview of some key concepts. I will specifically be talking about the HTTP/1.1 specification.
+
+### Requests and Responses
+
+Computers can communicate with each other in different ways. Some of those ways are
+
+1. **Publish/Subscrbe (PubSub)**
+    - where there is a central **publisher** machine and many **subscriber** machines
+2. **Event-Driven**
+    - where machines generate **events** and dont really care about responses
+3. **Peer-to-Peer (P2P)**
+    - where each machine is both a client and a server and machines communicate directly to one another
+
+The way the HTTP protocol usually works is a client (your browser usually) will send a request to a server and wait for a response, then a server will send back a response.
+There are things like request timeouts to make sure that the client doesnt wait for a response forever in case a server is down.
+
+### HTTP request stucture
+
+there are different parts of a HTTP request. Here is an example of one
+
+```
+POST /json HTTP/1.1
+Content-Type: application/json
+User-Agent: PostmanRuntime/7.37.3
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: a17d7a00-ddb7-4eec-85c1-6eb0ae531a3a
+Host: localhost:8080
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 75
+
+{"id": 13221111,"hello": "heydeqweq","test": 213,"test2": "3dadasdfdaas21"}
+```
+
+The parts of this request are:
+- **Method**: Indicates the action to be performed (GET, POST, PUT, DELETE, etc.).
+- **Path**: The resource the client is interested in (/json).
+- **HTTP** protocol: The version of HTTP the request is using (HTTP/1.1)
+- **Headers**: Key-value pairs providing metadata (Content-Type, User-Agent, etc.).
+- **Body** (Optional): Additional data, often used in POST requests to send form information.
 
 
-# Setting Up the Foundation in C
+### HTTP response stucture
+
+similarly, responses also have a structure, an example of one is:
+
+```
+HTTP/1.1 200 OK
+Content-Length: 88
+Content-Type: text/html
+```
+
+The parts of this request are:
+- **HTTP** protocol: The version of HTTP the request is using (HTTP/1.1)
+- **Status** Code: a code indicating what happened with the request(200 OK, 404 NOT FOUND, 201 CREATED, etc.)
+- **Headers**: Key-value pairs providing metadata (Content-Type, User-Agent, etc.).
+- **Body** (Optional): Additional data, that the server will respond with
 
 
-# Building the HTTP Logic
+## Some Concepts we should Understand
+
+### Sockets
+Creating a C server means you have to use sockets to do network programming. A good overview for this is 
+ [Beej's guide to network programming](https://beej.us/guide/bgnet/pdf/bgnet_usl_c_1.pdf).
+
+This guide is a really good guide on how networking works and give you a foundation for socket programming.
+
+### Hashtable
+To manage routes and route handlers, I used a hashtable. Hashtables (or Dictionaries, Hashmaps, JSON objects in other languages) are usually taken for granted, but in C we have to build it ourselves.
+
+### Multi-threading
+If we want our server to handle multiple requests at the same time, we need to add multi-threading. The way I implemented multi-threading in my server is definately not the best way to go about it. But its there and should be able to handle small loads.
 
 
-# A Simple C Server Example (Optional)
+## Building the HTTP Logic
+
+Once we understand the basics, now we can start working on the actual HTTP server part.
+
+#### Request Parsing
+Data arrives from the socket in one big buffer, so we have to parse the request. This part isn't really too interesting, as it is just splitting the data into a bunch of tokens and storing/handling/validating them
+
+I made a http_request struct to store the request data and a key_value_pair struct to help store the key values pairs:
+
+```c
+typedef struct key_value_pair {
+  char *key;
+  char *value;
+} keyval;
+
+typedef struct http_request {
+  int verb;
+  char *uri;
+  keyval headers[MAX_HEADER_COUNT];
+  int header_count;
+  keyval params[MAX_PARAMS_COUNT];
+  int param_count;
+  int response_fd;
+  keyval *body;
+  int body_count;
+} request;
+```
+this gets filled out in the parse_and_validate_request function I created, which again is just a bunch of strtok_r calls.
+#### Routes
+To handle routes we create a route table struct, which is a hashtable. The elements in this hashtable have will be called route entries and we create a 
+request handler type for the actual request handlers later on. 
+
+```c
+typedef void (*request_handler)(request *req);
+
+typedef struct route_entry {
+  char *pattern;
+  enum HTTP_VERBS verb;
+  request_handler handler;
+  struct route_entry *next;
+} route_entry;
+
+typedef struct route_hashtable {
+  int size;
+  route_entry **table;
+} route_table;
+```
+
+We will be using a linked list collision resolution technique in case of collisions.
+
+I use the following hash function, the key for each entry is the resource path.
+
+```c
+// djb2 hash algorithm
+// http://www.cse.yorku.ca/~oz/hash.html
+unsigned long hash_rt(char *uri) {
+  unsigned long hash = 5381;
+  int c;
+
+  while ((c = *uri++))
+    hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+
+  return hash;
+}
+```
+
+We also need functions to create a route table and add routes to the route table.
+Those aren't too interesting but if you want to see all those functions, it will be on my 
+[github](https://github.com/ElhamBadri2411/HTTP-C-SERVER/blob/main/routes_handler.c).
+
+Finally, we can setup the route table in the following function:
+
+```c
+route_table *setup_routes() {
+  route_table *rt = create_route_table(20);
+  add_route(rt, "/hello", get_hello, GET);
+  add_route(rt, "/test", get_test, GET);
+  add_route(rt, "/params", param_test, GET);
+  add_route(rt, "/index.css", get_css, GET);
+  add_route(rt, "/json", post_stuff, POST);
+  add_route(rt, "/json", get_json, GET);
+  add_route(rt, "/json", delete_test, DELETE);
+  add_route(rt, "/json", put_json, PUT);
+
+  return rt;
+}
+```
 
 
-# Lessons Learned
+#### Response generation
+For response generation, all we have to do is:
+- send the response status line (HTTP/1.1 200 OK)
+- send the content-type (Content-Type: application/json)
+- send the Content-Length (Content-Length: 88)
+- optionally send a body
 
-# Conclusion
+once again this is simply just sending information through a socket
+
+#### Multi-threading
+I implemented multi-threading in a pretty naive way, for each new request I created a new thread and run the hande_request function. 
+The issue with this is that there is no limit to how many threads can be created and it will crash the program if too many requests are made.
+A better approach would be to create a thread pool and assign new requests to idle threads or even use select() and epoll() to allow a single thread to monitor 
+multiple sockets.
+
+## Lessons Learned & Future improvements
+
+Building my own HTTP C server was a really good learning experiece. Altough I did come across many segfaults and double free errors, in the end it was a worth it.
+I learned a lot about the HTTP spec. There's something pretty satisfying about seeing an HTML page get rendered when hitting your own server from scratch.
+
+The server is far from production ready, there are probably some security vulnerablities and once again the thread management is pretty naive. But this was never meant to be a production ready server 
+and was just for a learning experience. 
+
+Some future improvements that I could add are:
+- handling headers 
+- improved synchronization
+- security
+
+If you are intruiged by the inner workings of the web, I highly encourage you to build a similar project. Buidling even a simple server really demystifies how everything works.
+You can always start small and iterate!
 
 
-
+Feel free to reach out if you want to talk about this!
