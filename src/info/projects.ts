@@ -2,6 +2,13 @@ import { Project } from "./types";
 
 export const Projects: Project[] = [
   {
+    title: "Taleweaver",
+    description: "An ai story creation tool",
+    image: "/taleweaver.jpg",
+    link: "https://taleweaver.me",
+    colour: "yellow"
+  },
+  {
     title: "Http C Server",
     description: "simple http server in C",
     image: "/cserver.jpg",

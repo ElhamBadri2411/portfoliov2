@@ -2,6 +2,17 @@ import { Experience } from "./types";
 
 export const Experiences: Experience[] = [
   {
+    company: "University of Toronto, IIS",
+    position: "Software Developer (Part-time)",
+    from: "July 2024",
+    to: "Present",
+    link: "https://islamicstudies.artsci.utoronto.ca/",
+    image: "/university_of_toronto_scarborough_logo.jpg",
+    location: "Toronto, ON",
+    slug: "utsc-iis",
+
+  },
+  {
     company: "Taq",
     position: "Software Developer (Co-op)",
     from: "Sep 2023",
