@@ -24,6 +24,11 @@ import {
   SiKubernetes,
   SiLinux,
   SiGitlab,
+  SiRedis,
+  SiSpring,
+  SiAngular,
+  SiApachekafka,
+  SiApachecassandra,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import { Skill } from "./types";
@@ -95,9 +100,24 @@ export const Skills: Skill[] = [
     colour: "Redux",
   },
   {
+    logo: SiAngular,
+    name: "Angular",
+    colour: "Angular",
+  },
+  {
     logo: SiTailwindcss,
     name: "Tailwind CSS",
     colour: "Tailwindcss",
+  },
+  {
+    logo: SiNodedotjs,
+    name: "Node.js",
+    colour: "Nodejs",
+  },
+  {
+    logo: SiSpring,
+    name: "Spring",
+    colour: "Spring",
   },
   {
     logo: SiNodedotjs,
@@ -123,6 +143,21 @@ export const Skills: Skill[] = [
     logo: SiMicrosoftsqlserver,
     name: "Microsoft SQL Server",
     colour: "Microsoftsqlserver",
+  },
+  {
+    logo: SiRedis,
+    name: "Redis",
+    colour: "Redis",
+  },
+  {
+    logo: SiApachekafka,
+    name: "Kafka",
+    colour: "Kafka",
+  },
+  {
+    logo: SiApachecassandra,
+    name: "Cassandra",
+    colour: "Cassandra",
   },
   {
     logo: SiGit,
@@ -159,4 +194,6 @@ export const Skills: Skill[] = [
     name: "GitLab",
     colour: "Gitlab",
   },
+
+
 ];

@@ -59,13 +59,12 @@ export default function Hero() {
             </p>
             <p className="mb-4">
               I have a passion for diving into a variety of projects, whether
-              it&apos;s crafting robust backend systems, delving into the
-              intricacies of low-level programming, developing efficient
-              internal tools, or creating full-stack applications.
+              it&apos;s crafting reliable, scalable, and maintainable backend systems,creating full stack applications, delving into the
+              intricacies of low-level programming, or developing efficient
+              internal tools.
             </p>
             <p className="mb-4">
-              Currently on the lookout for exciting Fall 2024 internship
-              opportunities, May 2025 full-time roles, or even that next big
+              Currently on the lookout for May 2025 full-time (new grad/entry level) roles, or even that next big
               startup idea :)
             </p>
             <p className="mb-4">
@@ -101,7 +100,6 @@ export default function Hero() {
                   <MailIcon />
                 </Badge>
               </Link>
-              {/* <MailIcon className="text-gray-600 h-6 w-6" /> */}
             </div>
           </section>
           {/* <div className="max-w-52 max-h-52">

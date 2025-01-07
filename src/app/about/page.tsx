@@ -109,7 +109,7 @@ const AboutPage = (props: Props) => {
         <br />
         <p>
           I&apos;m all about learning and trying different sorts of
-          technologies. Whether it&apos;s TypeScript, Next.js, C, Python, SQL or
+          technologies. Whether it&apos;s Go, TypeScript, Next.js, C, Java, Python, SQL or
           any other tool, I&apos;m ready to tackle challenges head-on. Whether
           I&apos;m building efficient solutions or refining user interfaces
           with, I&apos;m always exploring new technologies and pushing

@@ -33,6 +33,11 @@ const coloursMap: any = {
   Kubernetes: "hover:bg-[#007BFF]",
   Linux: "hover:bg-[#F05030]",
   Gitlab: "hover:bg-[#7C53C3]",
+  Redis: "hover:bg-[#7A0C00]",
+  Kafka: "hover:bg-[#0db7ed]",
+  Cassandra: "hover:bg-[#F05030]",
+  Spring: "hover:bg-[#4CAF50]",
+  Angular: "hover:bg-[#6F42C1]",
 };
 
 const Skills = (props: Props) => {
@@ -56,7 +61,7 @@ const Skills = (props: Props) => {
                 <Badge
                   variant={"outline"}
                   className={` ${coloursMap[colour]} flex-row w-fit py-1.5 space-x-4 flex-wrap m-1.5 `}
-                  // className={"hover:bg-logo-" + colour}
+                // className={"hover:bg-logo-" + colour}
                 >
                   <Icon className=" w-7 h-7" />
                   <span className="px-1.5 text-sm font-thin text-secondary-forground">
